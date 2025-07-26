@@ -1,0 +1,67 @@
+npm init -y
+
+npm i -D cypress prettier json-server
+
+npx cypress open
+
+GIT:
+
+git add .
+git commit -m "Initial commit: Proyecto Cypress base"
+
+Crear un repositorio en GitHub
+Conectar tu repositorio local con el de GitHub y subir los archivos
+
+
+git remote add origin https://github.com/tu-usuario/tu-repositorio.git
+git branch -M main
+git push -u origin main
+
+git branch # Muestra las ramas existentes y la rama actual marcada con un *
+git checkout main # Asegúrate de estar en la rama principal (o master)
+git checkout -b nombre-de-tu-rama
+Trabajar en tu nueva rama
+Realizar un commit:
+
+git push -u origin nombre-de-tu-rama
+git branch -d nombre-de-tu-rama # La opción '-d' solo elimina si la rama ya fue fusionada
+git push origin --delete nombre-de-tu-rama
+
+git push --set-upstream origin nombre-de-tu-rama
+# O la forma corta (más común):
+git push -u origin nombre-de-tu-rama
+
+Desde la línea de comandos:
+
+Bash
+
+npx cypress run --env CYPRESS_ENV=dev --browser chrome
+npx cypress open --env CYPRESS_ENV=qa
+Añadir scripts a package.json para simplificar:
+
+JSON
+
+"scripts": {
+  "cypress:open:dev": "npx cypress open --env CYPRESS_ENV=dev",
+  "cypress:run:qa": "npx cypress run --env CYPRESS_ENV=qa",
+  "cypress:run:prod": "npx cypress run --env CYPRESS_ENV=prod --headless"
+}
+Luego ejecutas con npm run cypress:open:dev o npm run cypress:run:qa.
+
+
+
+
+Para abrir la interfaz gráfica (GUI) de Cypress y cargar las constantes de un ambiente específico (QA o Dev), debes usar el comando npx cypress open junto con el argumento --env.
+
+Comando Básico para Abrir la GUI con un Ambiente Específico
+La clave es pasar la variable de entorno CYPRESS_ENV (o el nombre de la variable que uses para identificar tu ambiente) al comando open.
+
+Bash
+
+npx cypress open --env CYPRESS_ENV=qa
+O para el ambiente de desarrollo:
+
+Bash
+
+npx cypress open --env CYPRESS_ENV=dev
+

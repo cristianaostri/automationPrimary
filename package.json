@@ -1,0 +1,27 @@
+{
+  "name": "primary-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run:server": "json-server --watch db.json",
+    "e2e:chrome": "cypress run --browser chrome",
+    "cy:open": "cypress open",
+    "test:headless": "cypress run",
+    "cypress:open:dev": "npx cypress open --env CYPRESS_ENV=dev",
+    "cypress:open:qa": "npx cypress open --env CYPRESS_ENV=qa",
+    "cypress:open:prod": "npx cypress run --env CYPRESS_ENV=prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.5.2",
+    "json-server": "^1.0.0-beta.3",
+    "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "mssql": "^11.0.1"
+  }
+}
