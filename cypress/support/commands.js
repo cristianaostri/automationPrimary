@@ -26,6 +26,7 @@
 
 
 import loginPage from './page-objects/front/loginPage';
+import CambioParametrosEntrega from './page-objects/front/cambioParametrosEntrega';
 
 
 Cypress.Commands.add('login', (username, password) =>{
@@ -82,5 +83,7 @@ Cypress.Commands.add('apiLogin', () => {
       // Opcional: También puedes devolver el token para encadenar en .then() si lo necesitas
       // return response.body.access_token;
   });
-
+Cypress.Commands.add('cambiarParametroHora', () => {
+    const cambioParametrosEntrega = new CambioParametrosEntrega();
+});
 });
